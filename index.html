@@ -3,220 +3,269 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DZ Soluciones Integrales | Mantenimiento Edilicio & Servicios</title>
+    <title>DZ Soluciones Integrales | Servicios Profesionales</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --azul-dz: #003366;
+            --azul-dz: #0a2540;
             --verde-dz: #008080;
             --verde-wpp: #25d366;
-            --bg-light: #f8f9fa;
-            --text-dark: #222222;
-            --text-gray: #555555;
+            --bg-light: #f6f9fc;
+            --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            --text-dark: #2d3748;
+            --text-muted: #64748b;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Open Sans', sans-serif; color: var(--text-dark); background-color: #ffffff; line-height: 1.6; }
-        h1, h2, h3, h4 { font-family: 'Montserrat', sans-serif; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; color: var(--text-dark); background-color: var(--bg-light); line-height: 1.6; }
 
-        /* HEADER & NAV */
-        header { background: #ffffff; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 15px rgba(0,0,0,0.08); }
-        nav { max-width: 1200px; margin: auto; display: flex; justify-content: space-between; align-items: center; padding: 12px 20px; }
+        /* HEADER */
+        header { background: #ffffff; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 20px rgba(0,0,0,0.06); }
+        nav { max-width: 1200px; margin: auto; display: flex; justify-content: space-between; align-items: center; padding: 12px 24px; }
         
-        .brand-logo { display: flex; align-items: center; text-decoration: none; }
-        .brand-logo img { height: 50px; width: auto; object-fit: contain; }
+        .brand-logo img { height: 55px; width: auto; object-fit: contain; }
 
-        .nav-links { display: flex; gap: 25px; align-items: center; }
-        .nav-links a { text-decoration: none; color: var(--text-dark); font-weight: 600; font-size: 0.9rem; transition: 0.3s; text-transform: uppercase; }
+        .nav-links { display: flex; gap: 30px; align-items: center; }
+        .nav-links a { text-decoration: none; color: var(--text-dark); font-weight: 600; font-size: 0.95rem; transition: 0.3s; }
         .nav-links a:hover, .nav-links a.active { color: var(--verde-dz); }
-        .btn-nav-quote { background: var(--azul-dz); color: white !important; padding: 10px 20px; border-radius: 4px; font-weight: 700 !important; }
-        .btn-nav-quote:hover { background: var(--verde-dz); }
+        .btn-nav { background: var(--azul-dz); color: white !important; padding: 12px 24px; border-radius: 8px; font-weight: 700 !important; transition: 0.3s; }
+        .btn-nav:hover { background: var(--verde-dz); }
 
-        /* HERO BANNER INSTITUCIONAL */
+        /* HERO BANNER */
         .hero { 
-            background: linear-gradient(rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.88)), url('logo-dz.png') center/cover no-repeat; 
-            padding: 90px 20px; 
-            text-align: center; 
-            border-bottom: 1px solid #e0e0e0;
+            background: linear-gradient(135deg, rgba(10, 37, 64, 0.85), rgba(0, 128, 128, 0.75)), url('banner-dz.png') center/cover no-repeat; 
+            padding: 100px 24px; 
+            color: white; 
+            text-align: center;
         }
-        .hero-content { max-width: 900px; margin: auto; }
-        .hero-logo-main { max-width: 220px; height: auto; margin-bottom: 20px; filter: drop-shadow(0 4px 10px rgba(0,0,0,0.15)); }
-        .hero h1 { font-size: 2.5rem; font-weight: 800; color: var(--azul-dz); margin-bottom: 10px; text-transform: uppercase; letter-spacing: 1px; }
-        .hero p { font-size: 1.2rem; font-weight: 600; color: var(--verde-dz); margin-bottom: 30px; }
-        .hero-btns { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
+        .hero-content { max-width: 850px; margin: auto; }
+        .hero h1 { font-size: 3rem; font-weight: 800; margin-bottom: 16px; letter-spacing: -0.5px; }
+        .hero p { font-size: 1.25rem; opacity: 0.95; margin-bottom: 32px; font-weight: 500; }
+        .hero-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
         
-        .btn-main { background: var(--verde-wpp); color: white; padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 1rem; display: inline-flex; align-items: center; gap: 10px; box-shadow: 0 4px 15px rgba(37,211,102,0.3); transition: 0.3s; }
-        .btn-main:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(37,211,102,0.5); }
-        .btn-secondary { background: var(--azul-dz); color: white; padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 1rem; transition: 0.3s; }
-        .btn-secondary:hover { background: var(--verde-dz); }
+        .btn-main { background: var(--verde-wpp); color: white; padding: 16px 32px; border-radius: 50px; text-decoration: none; font-weight: 700; display: inline-flex; align-items: center; gap: 10px; transition: 0.3s; }
+        .btn-main:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(37,211,102,0.3); }
 
-        /* SERVICIOS */
-        .services-container { max-width: 1200px; margin: 80px auto; padding: 0 20px; }
+        /* SECCIÓN POR QUÉ CONFIAR */
+        .why-us { max-width: 1200px; margin: 80px auto 40px; padding: 0 24px; }
+        .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
+        .why-card { background: white; padding: 35px; border-radius: 16px; box-shadow: var(--card-shadow); border-top: 4px solid var(--verde-dz); }
+        .why-card i { font-size: 2.2rem; color: var(--verde-dz); margin-bottom: 20px; }
+        .why-card h3 { font-size: 1.25rem; color: var(--azul-dz); margin-bottom: 12px; font-weight: 700; }
+        .why-card p { color: var(--text-muted); font-size: 0.95rem; }
+
+        /* SERVICIOS CON IMÁGENES ILUSTRATIVAS */
+        .services-section { max-width: 1200px; margin: 80px auto; padding: 0 24px; }
         .section-header { text-align: center; margin-bottom: 50px; }
-        .section-header h2 { font-size: 2.2rem; color: var(--azul-dz); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
-        .section-header p { color: var(--text-gray); font-size: 1.05rem; }
-        .line-bar { width: 60px; height: 4px; background: var(--verde-dz); margin: 15px auto 0; border-radius: 2px; }
+        .section-header h2 { font-size: 2.2rem; color: var(--azul-dz); font-weight: 800; }
+        .section-header p { color: var(--text-muted); margin-top: 8px; }
 
-        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 25px; }
-        .service-card { background: var(--bg-light); border: 1px solid #e1e8e8; border-radius: 8px; padding: 35px 20px; text-align: center; transition: 0.3s; }
-        .service-card:hover { transform: translateY(-5px); background: white; box-shadow: 0 10px 25px rgba(0,0,0,0.08); border-color: var(--verde-dz); }
-        .service-card i { font-size: 2.5rem; color: var(--azul-dz); margin-bottom: 15px; }
-        .service-card h3 { font-size: 1.15rem; color: var(--azul-dz); text-transform: uppercase; margin-bottom: 10px; }
-        .service-card p { font-size: 0.9rem; color: var(--text-gray); }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+        .service-card { background: white; border-radius: 16px; overflow: hidden; box-shadow: var(--card-shadow); transition: 0.3s; }
+        .service-card:hover { transform: translateY(-5px); }
+        .service-img { height: 200px; width: 100%; object-fit: cover; }
+        .service-body { padding: 25px; }
+        .service-body h3 { font-size: 1.2rem; color: var(--azul-dz); margin-bottom: 10px; font-weight: 700; }
+        .service-body p { color: var(--text-muted); font-size: 0.9rem; }
 
-        /* CONTACTO */
-        .contact-section { background: var(--azul-dz); color: white; padding: 80px 20px; }
-        .contact-box { max-width: 1100px; margin: auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; align-items: center; }
-        .contact-info h2 { font-size: 2rem; margin-bottom: 15px; text-transform: uppercase; }
-        .contact-info p { opacity: 0.9; margin-bottom: 25px; font-size: 1rem; }
-        .contact-details { display: flex; flex-direction: column; gap: 15px; }
-        .c-item { display: flex; align-items: center; gap: 15px; font-size: 1.05rem; }
-        .c-item i { background: rgba(255,255,255,0.1); width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--verde-wpp); font-size: 1.2rem; }
+        /* FORMULARIO DE COTIZACIÓN DIRECTO A MAIL */
+        .quote-section { background: #ffffff; padding: 80px 24px; border-top: 1px solid #e2e8f0; }
+        .quote-container { max-width: 800px; margin: auto; background: var(--bg-light); padding: 40px; border-radius: 20px; box-shadow: var(--card-shadow); }
+        .quote-container h2 { text-align: center; color: var(--azul-dz); margin-bottom: 10px; font-weight: 800; }
+        .quote-container p { text-align: center; color: var(--text-muted); margin-bottom: 30px; }
 
-        .contact-card-action { background: white; color: var(--text-dark); padding: 35px; border-radius: 12px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
-        .contact-card-action h3 { color: var(--azul-dz); margin-bottom: 15px; font-size: 1.4rem; }
-        .contact-card-action p { margin-bottom: 25px; color: var(--text-gray); font-size: 0.95rem; }
+        .form-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+        .form-group { display: flex; flex-direction: column; gap: 8px; margin-bottom: 18px; }
+        .form-group.full { grid-column: 1 / -1; }
+        .form-group label { font-size: 0.85rem; font-weight: 700; color: var(--azul-dz); text-transform: uppercase; }
+        .form-group input, .form-group textarea { padding: 14px; border: 1px solid #cbd5e1; border-radius: 8px; font-family: inherit; font-size: 0.95rem; outline: none; }
+        .form-group input:focus, .form-group textarea:focus { border-color: var(--verde-dz); }
 
-        /* FOOTER & FLOATING WPP */
-        footer { background: #0c1a26; color: #aaa; text-align: center; padding: 25px 20px; font-size: 0.85rem; }
-        
-        .wpp-float { position: fixed; bottom: 25px; right: 25px; background: var(--verde-wpp); color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 32px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); z-index: 1000; text-decoration: none; transition: 0.3s; }
-        .wpp-float:hover { transform: scale(1.1); }
+        .btn-submit { background: var(--azul-dz); color: white; border: none; padding: 16px; border-radius: 8px; font-weight: 700; font-size: 1rem; cursor: pointer; transition: 0.3s; width: 100%; }
+        .btn-submit:hover { background: var(--verde-dz); }
+
+        /* FOOTER & WPP */
+        footer { background: var(--azul-dz); color: #94a3b8; text-align: center; padding: 30px; font-size: 0.9rem; }
+        .wpp-float { position: fixed; bottom: 25px; right: 25px; background: var(--verde-wpp); color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 32px; box-shadow: 0 4px 20px rgba(0,0,0,0.2); z-index: 1000; text-decoration: none; }
 
         @media (max-width: 768px) {
-            .hero h1 { font-size: 1.8rem; }
+            .hero h1 { font-size: 2rem; }
             .nav-links { display: none; }
+            .quote-container { padding: 25px; }
         }
     </style>
 </head>
 <body>
 
+    <!-- HEADER -->
     <header>
         <nav>
             <a href="index.html" class="brand-logo">
-                <img src="logo-dz.png" alt="DZ Soluciones Integrales Logo">
+                <img src="logo-limpio.png" alt="DZ Soluciones Integrales">
             </a>
             <div class="nav-links">
                 <a href="index.html" class="active">Inicio</a>
-                <a href="#servicios">Servicios</a>
                 <a href="experiencia.html">Experiencia</a>
-                <a href="#contacto" class="btn-nav-quote">Cotizar</a>
+                <a href="#cotizar" class="btn-nav">Cotizar Presupuesto</a>
             </div>
         </nav>
     </header>
 
+    <!-- HERO -->
     <section class="hero">
         <div class="hero-content">
-            <img src="logo-dz.png" alt="DZ Logo Central" class="hero-logo-main">
             <h1>DZ Soluciones Integrales</h1>
-            <p>Mantenimiento Edilicio y Soluciones Tecnológicas de Alta Gama</p>
+            <p>Mantenimiento edilicio profesional, adecuaciones técnicas y proyectos de infraestructura.</p>
             <div class="hero-btns">
-                <a href="https://wa.me/5491172815934?text=Hola,%20quisiera%20solicitar%20un%20presupuesto" class="btn-main" target="_blank">
-                    <i class="fab fa-whatsapp"></i> Solicitar Presupuesto
+                <a href="https://wa.me/5491167443518?text=Hola,%20quisiera%20solicitar%20un%20presupuesto" class="btn-main" target="_blank">
+                    <i class="fab fa-whatsapp"></i> WhatsApp Directo
                 </a>
-                <a href="#servicios" class="btn-secondary">Ver Servicios</a>
             </div>
         </div>
     </section>
 
-    <section id="servicios" class="services-container">
+    <!-- POR QUÉ CONFIAR -->
+    <section class="why-us">
         <div class="section-header">
-            <h2>Nuestros Servicios</h2>
-            <p>Cobertura técnica profesional ajustada a cada necesidad edilicia, comercial e industrial.</p>
-            <div class="line-bar"></div>
+            <h2>¿Por qué confiar en nosotros?</h2>
+            <p>Nos dedicamos al mantenimiento integral porque entendemos el valor de proteger y revalorizar cada infraestructura.</p>
         </div>
+        <div class="why-grid">
+            <div class="why-card">
+                <i class="fas fa-user-shield"></i>
+                <h3>Compromiso Institucional</h3>
+                <p>Nuestra vocación nace de la necesidad de ofrecer soluciones reales, organizadas y con responsabilidad en cada proyecto asignado.</p>
+            </div>
+            <div class="why-card">
+                <i class="fas fa-tools"></i>
+                <h3>Respuesta Eficiente</h3>
+                <p>Nos enfocamos en diagnosticar correctamente antes de intervenir, asegurando trabajos duraderos sin gastos innecesarios.</p>
+            </div>
+            <div class="why-card">
+                <i class="fas fa-file-signature"></i>
+                <h3>Transparencia Comercial</h3>
+                <p>Entregamos presupuestos claros y detallados para que consorcios, empresas e instituciones supervisen cada etapa del proceso.</p>
+            </div>
+        </div>
+    </section>
 
+    <!-- SERVICIOS CON IMÁGENES -->
+    <section class="services-section">
+        <div class="section-header">
+            <h2>Nuestros Servicios Especializados</h2>
+        </div>
         <div class="services-grid">
             <div class="service-card">
-                <i class="fas fa-burn"></i>
-                <h3>Gasista</h3>
-                <p>Instalaciones, adecuaciones, mantenimiento preventivo y detección de fugas bajo normas de seguridad.</p>
-            </div>
-            <div class="service-card">
-                <i class="fas fa-faucet"></i>
-                <h3>Plomería</h3>
-                <p>Reparación de cañerías, limpieza de tanques, instalaciones sanitarias y resolución de filtraciones.</p>
-            </div>
-            <div class="service-card">
-                <i class="fas fa-paint-roller"></i>
-                <h3>Pintura</h3>
-                <p>Trabajos en altura, pintura de obras, fachadas, espacios comunes e interiores con acabados de primera.</p>
-            </div>
-            <div class="service-card">
-                <i class="fas fa-tint-slash"></i>
-                <h3>Impermeabilización</h3>
-                <p>Tratamiento de terrazas, medianeras, losas y cubiertas para prevenir humedad y filtraciones estructurales.</p>
-            </div>
-            <div class="service-card">
-                <i class="fas fa-video"></i>
-                <h3>Cámaras de Seguridad</h3>
-                <p>Instalación, mantenimiento, limpieza técnica y configuración de software de videovigilancia.</p>
-            </div>
-            <div class="service-card">
-                <i class="fas fa-bolt"></i>
-                <h3>Electricidad Industrial</h3>
-                <p>Tableros eléctricos, cableados estructurados, balanceo de fases y mantenimiento eléctrico general.</p>
-            </div>
-            <div class="service-card">
-                <i class="fas fa-hammer"></i>
-                <h3>Carpintería</h3>
-                <p>Reparación y fabricación en madera, colocación de aberturas, muebles a medida y mantenimiento en general.</p>
-            </div>
-            <div class="service-card">
-                <i class="fas fa-cubes"></i>
-                <h3>Albañilería</h3>
-                <p>Refacciones, contrapisos, revestimientos, colocación de cerámicos y trabajos estructurales.</p>
-            </div>
-            <div class="service-card">
-                <i class="fas fa-snowflake"></i>
-                <h3>Refrigeración</h3>
-                <p>Instalación, carga de gas y mantenimiento de equipos de aire acondicionado split y centrales.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="contacto" class="contact-section">
-        <div class="contact-box">
-            <div class="contact-info">
-                <h2>¿Necesitás un presupuesto a medida?</h2>
-                <p>Contactate con nuestro equipo comercial para recibir asesoramiento personalizado y técnico para tu consorcio, empresa o institución.</p>
-                
-                <div class="contact-details">
-                    <div class="c-item">
-                        <i class="fas fa-envelope"></i>
-                        <span>dz.solucionesintegrales@gmail.com</span>
-                    </div>
-                    <div class="c-item">
-                        <i class="fas fa-globe"></i>
-                        <span>www.dzsolucionesintegrales.com.ar</span>
-                    </div>
-                    <div class="c-item">
-                        <i class="fas fa-shield-alt"></i>
-                        <span>Garantía y Profesionalismo En Cada Trabajo</span>
-                    </div>
+                <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=600&q=80" class="service-img" alt="Gasista">
+                <div class="service-body">
+                    <h3>Gasista Matriculado</h3>
+                    <p>Adecuaciones, instalaciones de artefacos, prueba de hermeticidad y mantenimiento preventivo.</p>
                 </div>
             </div>
-
-            <div class="contact-card-action">
-                <h3>Contacto Directo</h3>
-                <p>Envía tu consulta de forma instantánea por WhatsApp o correo electrónico.</p>
-                <a href="https://wa.me/5491172815934?text=Hola,%20quisiera%20solicitar%20un%20presupuesto" class="btn-main" style="width:100%; justify-content:center; margin-bottom: 15px;" target="_blank">
-                    <i class="fab fa-whatsapp"></i> WhatsApp Comercial
-                </a>
-                <a href="mailto:dz.solucionesintegrales@gmail.com" class="btn-secondary" style="width:100%; display:block; text-align:center;">
-                    Enviar Mail
-                </a>
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1585704032915-c3400ca199e7?auto=format&fit=crop&w=600&q=80" class="service-img" alt="Plomería">
+                <div class="service-body">
+                    <h3>Plomería & Sanitarios</h3>
+                    <p>Reparación de cañerías, tanques de agua, sistemas de presión y solución de filtraciones.</p>
+                </div>
+            </div>
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=600&q=80" class="service-img" alt="Pintura">
+                <div class="service-body">
+                    <h3>Pintura General & Altura</h3>
+                    <p>Pintura de interiores, espacios comunes, fachadas y revestimientos plásticos.</p>
+                </div>
+            </div>
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80" class="service-img" alt="Impermeabilización">
+                <div class="service-body">
+                    <h3>Impermeabilización</h3>
+                    <p>Tratamiento de terrazas, losas y medianeras para prevención de infiltraciones.</p>
+                </div>
+            </div>
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=600&q=80" class="service-img" alt="Cámaras">
+                <div class="service-body">
+                    <h3>Cámaras de Seguridad</h3>
+                    <p>Instalación, mantenimiento preventivo y configuración de videovigilancia.</p>
+                </div>
+            </div>
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=600&q=80" class="service-img" alt="Electricidad">
+                <div class="service-body">
+                    <h3>Electricidad Industrial</h3>
+                    <p>Tableros eléctricos, cableados estructurados, iluminación y balanceo de cargas.</p>
+                </div>
+            </div>
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&w=600&q=80" class="service-img" alt="Carpintería">
+                <div class="service-body">
+                    <h3>Carpintería</h3>
+                    <p>Reparaciones en madera, colocación de aberturas y mobiliario general.</p>
+                </div>
+            </div>
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1541888946425-d0fbb186a5b7?auto=format&fit=crop&w=600&q=80" class="service-img" alt="Albañilería">
+                <div class="service-body">
+                    <h3>Albañilería</h3>
+                    <p>Refacciones integrales, contrapisos, cerámicos y trabajos en mampostería.</p>
+                </div>
+            </div>
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1631545806161-0d325a7a7266?auto=format&fit=crop&w=600&q=80" class="service-img" alt="Refrigeración">
+                <div class="service-body">
+                    <h3>Refrigeración</h3>
+                    <p>Mantenimiento, carga de gas e instalación de equipos split y centrales.</p>
+                </div>
             </div>
         </div>
     </section>
 
+    <!-- FORMULARIO DE COTIZACIÓN A MAIL -->
+    <section id="cotizar" class="quote-section">
+        <div class="quote-container">
+            <h2>Solicitar Cotización Directa</h2>
+            <p>Completa los datos del proyecto para enviar la consulta formal a nuestro correo electrónico.</p>
+            
+            <form action="https://formsubmit.co/dz.solucionesintegrales@gmail.com" method="POST">
+                <input type="hidden" name="_next" value="https://dzsolucionesintegrales.com">
+                <input type="hidden" name="_captcha" value="false">
+                
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Nombre / Representante</label>
+                        <input type="text" name="Nombre" placeholder="Tu nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Empresa / Consorcio</label>
+                        <input type="text" name="Empresa_o_Consorcio" placeholder="Ej: Consorcio Av. Mayo" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Teléfono de Contacto</label>
+                        <input type="tel" name="Telefono" placeholder="11 1234-5678" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Ubicación / Zona</label>
+                        <input type="text" name="Ubicacion" placeholder="Ej: Morón, CABA, etc." required>
+                    </div>
+                    <div class="form-group full">
+                        <label>Detalle de la Consulta o Trabajo</label>
+                        <textarea name="Detalle_Trabajo" rows="4" placeholder="Describe brevemente qué trabajo requieren realizar..." required></textarea>
+                    </div>
+                </div>
+                <button type="submit" class="btn-submit"><i class="fas fa-paper-plane"></i> Enviar Mensaje a Correo</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
     <footer>
         <p>&copy; 2026 DZ Soluciones Integrales. Todos los derechos reservados.</p>
     </footer>
 
-    <a href="https://wa.me/5491172815934?text=Hola,%20quisiera%20consultar%20por%20un%20servicio" class="wpp-float" target="_blank">
+    <a href="https://wa.me/5491167443518?text=Hola,%20quisiera%20consultar%20por%20un%20servicio" class="wpp-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
 
