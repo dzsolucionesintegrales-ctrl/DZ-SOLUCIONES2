@@ -3,79 +3,243 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DZ Soluciones Integrales | Experiencia</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>DZ Soluciones Integrales | Experiencia e Historial de Proyectos</title>
+    <!-- FontAwesome & Google Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    
     <style>
-        :root { --azul-dz: #003366; --verde-dz: #008080; --gris-fondo: #f8f9fa; }
-        body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; color: #222; background-color: var(--gris-fondo); }
-        header { background: white; padding: 15px 0; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
-        nav { max-width: 1100px; margin: auto; display: flex; justify-content: space-between; align-items: center; padding: 0 20px; }
-        .logo-nav { font-weight: bold; font-size: 1.4rem; color: var(--azul-dz); text-decoration: none; }
-        .logo-nav span { color: var(--verde-dz); }
-        .nav-links a { text-decoration: none; color: #555; margin-left: 20px; font-weight: 500; font-size: 0.95rem; }
+        :root {
+            --azul-dz: #003366;
+            --verde-dz: #008080;
+            --verde-wpp: #25d366;
+            --bg-light: #f4f7f6;
+            --text-dark: #1f2937;
+            --text-gray: #4b5563;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Open Sans', sans-serif; color: var(--text-dark); background-color: #ffffff; line-height: 1.6; }
+        h1, h2, h3, h4 { font-family: 'Montserrat', sans-serif; }
+
+        /* HEADER & NAV */
+        header { background: #ffffff; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 15px rgba(0,0,0,0.08); }
+        nav { max-width: 1200px; margin: auto; display: flex; justify-content: space-between; align-items: center; padding: 12px 20px; }
+        
+        .brand-logo { display: flex; align-items: center; text-decoration: none; }
+        .brand-logo img { height: 50px; width: auto; object-fit: contain; }
+
+        .nav-links { display: flex; gap: 25px; align-items: center; }
+        .nav-links a { text-decoration: none; color: var(--text-dark); font-weight: 600; font-size: 0.9rem; transition: 0.3s; text-transform: uppercase; }
         .nav-links a:hover, .nav-links a.active { color: var(--verde-dz); }
+        .btn-nav-quote { background: var(--azul-dz); color: white !important; padding: 10px 20px; border-radius: 4px; font-weight: 700 !important; }
+        .btn-nav-quote:hover { background: var(--verde-dz); }
+
+        /* HERO EXPERIENCE */
+        .exp-hero {
+            background: linear-gradient(135deg, rgba(0, 51, 102, 0.95), rgba(0, 128, 128, 0.9)), url('logo-dz.png') center/cover no-repeat;
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        .exp-hero h1 { font-size: 2.6rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 10px; }
+        .exp-hero p { font-size: 1.15rem; max-width: 750px; margin: auto; opacity: 0.9; }
+
+        /* METRICS COUNTER */
+        .metrics-bar {
+            background: #ffffff;
+            max-width: 1000px;
+            margin: -40px auto 60px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            padding: 25px 20px;
+            text-align: center;
+            position: relative;
+            z-index: 10;
+            border-bottom: 4px solid var(--verde-dz);
+        }
+        .metric-item h3 { font-size: 2.2rem; color: var(--azul-dz); font-weight: 800; }
+        .metric-item p { font-size: 0.85rem; color: var(--text-gray); font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
+
+        /* CLIENT CARDS SECTION */
+        .exp-container { max-width: 1100px; margin: 0 auto 80px; padding: 0 20px; }
+        .section-header { text-align: center; margin-bottom: 50px; }
+        .section-header h2 { font-size: 2rem; color: var(--azul-dz); text-transform: uppercase; letter-spacing: 1px; }
+        .line-bar { width: 60px; height: 4px; background: var(--verde-dz); margin: 12px auto 0; border-radius: 2px; }
+
+        .client-card {
+            background: white;
+            border-radius: 12px;
+            padding: 35px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            border-left: 6px solid var(--azul-dz);
+            transition: all 0.3s ease;
+            display: grid;
+            grid-template-columns: 80px 1fr;
+            gap: 20px;
+            align-items: start;
+        }
+        .client-card:hover {
+            border-left-color: var(--verde-dz);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+        }
+        .client-icon-badge {
+            width: 70px;
+            height: 70px;
+            background: var(--bg-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--verde-dz);
+            border: 2px solid #e1e8e8;
+        }
+        .client-info h3 { font-size: 1.4rem; color: var(--azul-dz); margin-bottom: 5px; text-transform: uppercase; }
+        .client-tag { display: inline-block; background: rgba(0, 128, 128, 0.1); color: var(--verde-dz); font-size: 0.75rem; font-weight: 700; padding: 3px 10px; border-radius: 20px; text-transform: uppercase; margin-bottom: 15px; }
+        .client-info p { color: var(--text-gray); font-size: 0.98rem; line-height: 1.7; }
+
+        /* SCOPE BADGES */
+        .scope-list { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 15px; }
+        .scope-badge { background: #eef2f5; color: var(--azul-dz); font-size: 0.8rem; font-weight: 600; padding: 4px 12px; border-radius: 4px; }
+
+        /* CALL TO ACTION */
+        .cta-exp { background: var(--bg-light); border: 2px dashed var(--verde-dz); border-radius: 12px; padding: 40px 20px; text-align: center; max-width: 1100px; margin: 0 auto 80px; }
+        .cta-exp h3 { color: var(--azul-dz); font-size: 1.6rem; margin-bottom: 10px; }
+        .cta-exp p { color: var(--text-gray); margin-bottom: 25px; }
+
+        /* FOOTER & FLOATING WPP */
+        footer { background: #0c1a26; color: #aaa; text-align: center; padding: 25px 20px; font-size: 0.85rem; }
         
-        .experience-container { max-width: 900px; margin: 60px auto; padding: 0 20px; }
-        .main-title { text-align: center; font-size: 2.2rem; color: var(--azul-dz); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 5px; }
-        .subtitle { text-align: center; font-size: 1.1rem; color: #666; margin-bottom: 50px; font-weight: bold; letter-spacing: 1px; }
-        
-        .client-card { background: white; border-radius: 12px; padding: 35px; margin-bottom: 30px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); border-left: 6px solid var(--azul-dz); transition: 0.3s; }
-        .client-card:hover { border-left-color: var(--verde-dz); transform: translateX(5px); }
-        .client-header { display: flex; align-items: center; gap: 15px; margin-bottom: 15px; }
-        .client-header i { font-size: 2.2rem; color: var(--verde-dz); }
-        .client-header h3 { margin: 0; font-size: 1.5rem; color: var(--azul-dz); }
-        .client-card p { color: #555; font-size: 1.05rem; line-height: 1.7; margin: 0; }
-        
-        footer { background: #0c1a26; color: #aaa; text-align: center; padding: 25px; font-size: 0.9rem; margin-top: 100px; }
+        .wpp-float { position: fixed; bottom: 25px; right: 25px; background: var(--verde-wpp); color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 32px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); z-index: 1000; text-decoration: none; transition: 0.3s; }
+        .wpp-float:hover { transform: scale(1.1); }
+
+        @media (max-width: 768px) {
+            .client-card { grid-template-columns: 1fr; text-align: center; }
+            .client-icon-badge { margin: 0 auto; }
+            .nav-links { display: none; }
+        }
     </style>
 </head>
 <body>
 
+    <!-- HEADER -->
     <header>
         <nav>
-            <a href="index.html" class="logo-nav">DZ <span>SOLUCIONES</span></a>
+            <a href="index.html" class="brand-logo">
+                <img src="logo-dz.png" alt="DZ Soluciones Integrales Logo">
+            </a>
             <div class="nav-links">
-                <a href="index.html">INICIO</a>
-                <a href="index.html#servicios">SERVICIOS</a>
-                <a href="experiencia.html" class="active">EXPERIENCIA</a>
-                <a href="index.html#contacto">CONTACTO</a>
+                <a href="index.html">Inicio</a>
+                <a href="index.html#servicios">Servicios</a>
+                <a href="experiencia.html" class="active">Experiencia</a>
+                <a href="index.html#contacto" class="btn-nav-quote">Cotizar</a>
             </div>
         </nav>
     </header>
 
-    <main class="experience-container">
-        <h2 class="main-title">Experiencia</h2>
-        <div class="subtitle">INSTITUCIONES QUE CONFÍAN EN NUESTRA TRAYECTORIA</div>
-        
+    <!-- HERO DE EXPERIENCIA -->
+    <section class="exp-hero">
+        <h1>Trayectoria e Historial Técnico</h1>
+        <p>Garantizamos continuidad operativa y estándares de excelencia en infraestructura edilicia, médica y académica.</p>
+    </section>
+
+    <!-- BARRA DE MÉTRICAS -->
+    <div class="metrics-bar">
+        <div class="metric-item">
+            <h3>+10</h3>
+            <p>Años de Experiencia</p>
+        </div>
+        <div class="metric-item">
+            <h3>100%</h3>
+            <p>Garantía de Obra</p>
+        </div>
+        <div class="metric-item">
+            <h3>24/7</h3>
+            <p>Soporte de Emergencia</p>
+        </div>
+    </div>
+
+    <!-- PROYECTOS DESTACADOS -->
+    <main class="exp-container">
+        <div class="section-header">
+            <h2>Casos de Éxito e Instituciones</h2>
+            <div class="line-bar"></div>
+        </div>
+
         <!-- Centro de Ojos -->
         <div class="client-card">
-            <div class="client-header">
+            <div class="client-icon-badge">
                 <i class="fas fa-eye"></i>
-                <h3>Centro de Ojos</h3>
             </div>
-            <p>Ejecutamos el mantenimiento integral y la limpieza técnica especializada en instalaciones médicas de alta precisión. Garantizamos la correcta higiene técnica en áreas críticas y supervisamos la optimización de sus sistemas de cámaras de monitoreo.</p>
+            <div class="client-info">
+                <h3>Centro de Ojos</h3>
+                <span class="client-tag">Sector Salud & Quirúrgico</span>
+                <p>Ejecución continua de mantenimiento integral y sanitización técnica avanzada en instalaciones médicas de alta precisión. Implementación de protocolos estrictos de higiene técnica en áreas críticas y supervisión, ajuste y optimización de sistemas de cámaras de monitoreo preventivo.</p>
+                <div class="scope-list">
+                    <span class="scope-badge"><i class="fas fa-check"></i> Higiene Médica</span>
+                    <span class="scope-badge"><i class="fas fa-check"></i> CCTV & Cámaras</span>
+                    <span class="scope-badge"><i class="fas fa-check"></i> Mantenimiento Preventivo</span>
+                </div>
+            </div>
         </div>
 
         <!-- Sanatorio del Oeste -->
         <div class="client-card">
-            <div class="client-header">
+            <div class="client-icon-badge">
                 <i class="fas fa-hospital"></i>
-                <h3>Sanatorio del Oeste</h3>
             </div>
-            <p>Desarrollamos servicios de pintura profesional e impermeabilización de fachadas y estructuras. Llevamos a cabo planes de mantenimiento edilicio preventivo para asegurar que las instalaciones de gran escala hospitalaria operen bajo óptimas condiciones estéticas y funcionales.</p>
+            <div class="client-info">
+                <h3>Sanatorio del Oeste</h3>
+                <span class="client-tag">Infraestructura Hospitalaria</span>
+                <p>Desarrollo de planes integrales de pintura profesional e impermeabilización técnica de fachadas y cubiertas. Mantenimiento edilicio correctivo y preventivo diseñado para asegurar la protección estructural y estética de edificios de alta circulación sanitaria.</p>
+                <div class="scope-list">
+                    <span class="scope-badge"><i class="fas fa-check"></i> Impermeabilización</span>
+                    <span class="scope-badge"><i class="fas fa-check"></i> Pintura en Altura</span>
+                    <span class="scope-badge"><i class="fas fa-check"></i> Mantenimiento Edilicio</span>
+                </div>
+            </div>
         </div>
 
         <!-- UBA -->
         <div class="client-card">
-            <div class="client-header">
+            <div class="client-icon-badge">
                 <i class="fas fa-university"></i>
-                <h3>Universidad de Buenos Aires (UBA)</h3>
             </div>
-            <p>Proveemos soporte tecnológico avanzado enfocado en la gestión y actualización del software para cámaras de seguridad edilicia. Adicionalmente, resolvemos requerimientos de mantenimiento general en sus complejos arquitectónicos académicos.</p>
+            <div class="client-info">
+                <h3>Universidad de Buenos Aires (UBA)</h3>
+                <span class="client-tag">Sector Educativo & Institucional</span>
+                <p>Provisión de soporte tecnológico especializado enfocado en la administración, actualización y optimización de software de seguridad para videovigilancia. Resolución de requerimientos edilicios, adecuaciones eléctricas e intervenciones de mantenimiento general en complejos universitarios.</p>
+                <div class="scope-list">
+                    <span class="scope-badge"><i class="fas fa-check"></i> Software de Seguridad</span>
+                    <span class="scope-badge"><i class="fas fa-check"></i> Infraestructura Tecnológica</span>
+                    <span class="scope-badge"><i class="fas fa-check"></i> Refacciones Generales</span>
+                </div>
+            </div>
         </div>
     </main>
 
-    <footer>&copy; 2026 DZ Soluciones Integrales - Experiencia y Compromiso Institucional.</footer>
+    <!-- CALL TO ACTION -->
+    <div class="cta-exp">
+        <h3>¿Buscás contratar un servicio corporativo o para tu consorcio?</h3>
+        <p>Ofrecemos atención directa, elaboración de pliegos y cotizaciones formales para instituciones.</p>
+        <a href="https://wa.me/5491167443518?text=Hola,%20quisiera%20solicitar%20referencias%20o%20presupuesto" class="btn-nav-quote" style="padding: 15px 30px; border-radius: 50px; text-decoration: none;" target="_blank">
+            <i class="fab fa-whatsapp"></i> Contactar a Representante Comercial
+        </a>
+    </div>
+
+    <!-- FOOTER Y BOTÓN FLOTANTE -->
+    <footer>
+        <p>&copy; 2026 DZ Soluciones Integrales. Todos los derechos reservados.</p>
+    </footer>
+
+    <a href="https://wa.me/5491167443518?text=Hola,%20quisiera%20consultar%20por%20un%20servicio" class="wpp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
 </body>
 </html>
