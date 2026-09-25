@@ -7,13 +7,13 @@
     <meta name="description" content="Portal de soporte técnico y gestión de tickets para clientes.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css?v=20260925-2">
 </head>
 <body>
 
     <header>
         <div class="container nav">
-            <a class="brand" href="index.html" aria-label="DZ Soluciones Integrales, inicio"><span class="logo-mark" aria-hidden="true"></span><span class="brand-name"><strong>DZ</strong><span>Soluciones Integrales</span></span></a>
+            <a class="brand" href="index.html" aria-label="DZ Soluciones Integrales, inicio"><svg class="brand-symbol" width="54" height="54" viewBox="0 0 54 54" role="img" aria-label="DZ"><circle cx="27" cy="27" r="26" fill="#06284a"/><path d="M10 38V16h9c7 0 11 4 11 11s-4 11-11 11h-9zm7-6h2c3 0 5-2 5-5s-2-5-5-5h-2v10z" fill="#fff"/><path d="M31 16h15v5L36 32h10v6H29v-5l10-11h-8z" fill="#5be0d4"/></svg><span class="brand-name"><strong>DZ Soluciones</strong><span>Integrales</span></span></a>
             <button class="menu-btn" type="button" aria-label="Abrir menú" aria-expanded="false">☰</button>
             <nav class="nav-links">
                 <a href="index.html">Inicio</a>
@@ -27,25 +27,20 @@
         </div>
     </header>
 
-    <section class="section" style="padding: 100px 0; text-align: center; background: #eef4f6; min-height: 70vh; display: flex; align-items: center;">
-        <div class="container reveal" style="max-width: 700px; margin: 0 auto;">
-            <div style="width: 70px; height: 70px; background: #e0f0ef; color: #086f70; border-radius: 50%; display: grid; place-items: center; font-size: 28px; margin: 0 auto 20px;">
-                <i class="fas fa-headset"></i>
+    <main class="support-page">
+        <div class="container">
+            <div class="support-panel reveal">
+                <div class="support-icon" aria-hidden="true"><i class="fas fa-headset"></i></div>
+                <h1>Portal de Soporte Técnico</h1>
+                <p>Ingresá al sistema de tickets para reportar inconvenientes, hacer consultas técnicas o consultar el estado de tus solicitudes.</p>
+                <a class="btn btn-primary" href="http://157.151.5.171/osticket/login.php" target="_blank" rel="noopener noreferrer">Ingresar al Sistema de Tickets <i class="fas fa-external-link-alt" aria-hidden="true"></i></a>
             </div>
-            <h1 style="color: #083653; font-size: clamp(2rem, 3vw, 2.8rem); margin-bottom: 15px;">Portal de Soporte Técnico</h1>
-            <p style="color: #435762; font-size: 1.1rem; line-height: 1.6; margin-bottom: 30px;">
-                Accede a nuestro sistema de tickets para reportar inconvenientes, realizar consultas técnicas o verificar el estado de tus solicitudes en curso.
-            </p>
-            <!-- Aquí colocas el enlace directo a tu osTicket -->
-            <a class="btn btn-primary" href="http://157.151.5.171/osticket/login.php" target="_blank" rel="noopener" style="font-size: 1.1rem; padding: 14px 28px;">
-                Ingresar al Sistema de Tickets <i class="fas fa-external-link-alt" style="margin-left: 8px; font-size: 0.9rem;"></i>
-            </a>
         </div>
-    </section>
+    </main>
 
     <footer>
         <div class="container footer-grid">
-            <span class="footer-logo logo-mark" role="img" aria-label="DZ Soluciones Integrales"></span>
+            <span class="footer-brand" role="img" aria-label="DZ Soluciones Integrales"><svg class="brand-symbol" width="54" height="54" viewBox="0 0 54 54" role="img" aria-label="DZ"><circle cx="27" cy="27" r="26" fill="#06284a"/><path d="M10 38V16h9c7 0 11 4 11 11s-4 11-11 11h-9zm7-6h2c3 0 5-2 5-5s-2-5-5-5h-2v10z" fill="#fff"/><path d="M31 16h15v5L36 32h10v6H29v-5l10-11h-8z" fill="#5be0d4"/></svg><span>DZ Soluciones<br>Integrales</span></span>
             <div>
                 <p>© 2026 DZ Soluciones Integrales. Todos los derechos reservados.</p>
                 <p style="margin-top:5px;opacity:.7">Mantenimiento · Infraestructura · Soluciones</p>
